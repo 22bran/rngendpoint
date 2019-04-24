@@ -10,7 +10,7 @@ class RandomNumberController extends BaseController
 {
     public function getRandomNumber(Request $request)
     {
-        if ($request->input('secret') !== env('secret') || !is_numeric($request->input('min')) || !is_numeric($request->input('max'))) {
+        if ($request->input('secret') !== env('SECRET') || !is_numeric($request->input('min')) || !is_numeric($request->input('max'))) {
             return response('', 400);
         }
         $min = (int) $request->input('min');
